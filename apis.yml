@@ -13,14 +13,14 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
   - Federal Government
-  - Science
   - Research
+  - Science
 apis:
   - aid: national-science-foundation:national-science-foundation
     name: National Science Foundation API
     tags:
-      - Science
       - Research
+      - Science
     humanURL: https://www.nsf.gov/developer
     baseURL: https://api.nsf.gov/
     properties:
