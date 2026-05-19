@@ -1,29 +1,35 @@
 naftiko: 1.0.0-alpha2
 info:
   label: National Science Foundation Awards API
-  description: The NSF Research Spending and Results Web API provides programmatic access to the award search functionality
-    available through Research.gov. The API exposes how federal research dollars are being spent, what research is being performed,
-    and project outcomes that result from NSF-funded work.
+  description: 'National Science Foundation Awards API. 3 operations. Lead operation: Search awards. Self-contained Naftiko
+    capability covering one National Science Foundation business surface.'
   tags:
-  - National
-  - Science
-  - Foundation
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - National Science Foundation
+  - National Science Foundation Awards API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NATIONAL_SCIENCE_FOUNDATION_API_KEY: NATIONAL_SCIENCE_FOUNDATION_API_KEY
 capability:
   consumes:
   - type: http
     namespace: national-science-foundation
     baseUri: https://api.nsf.gov/services/v1
-    description: National Science Foundation Awards API HTTP API.
+    description: National Science Foundation Awards API business capability. Self-contained, no shared references.
     resources:
-    - name: awards-format
+    - name: awards.{format}
       path: /awards.{format}
       operations:
-      - name: get-awards-format
+      - name: get
         method: GET
         description: Search awards
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: format
           in: path
@@ -133,38 +139,38 @@ capability:
           in: query
           type: string
           description: JSONP callback name (when format is json).
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: awards-id-format
+    - name: awards-id}.{format
       path: /awards/{id}.{format}
       operations:
-      - name: get-awards-id-format
+      - name: get
         method: GET
         description: Retrieve a single award
-        inputParameters:
-        - name: id
-          in: path
-          type: string
-          required: true
-          description: NSF award number.
-        - name: format
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-    - name: awards-id-projectoutcomes-format
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          description: NSF award number.
+          required: true
+        - name: format
+          in: path
+          type: string
+          required: true
+    - name: awards-id-projectoutcomes.{format}
       path: /awards/{id}/projectoutcomes.{format}
       operations:
-      - name: get-awards-id-projectoutcomes-format
+      - name: get
         method: GET
         description: Retrieve project outcomes for an award
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: id
           in: path
@@ -174,49 +180,81 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
   exposes:
   - type: rest
-    port: 8080
     namespace: national-science-foundation-rest
-    description: REST adapter for National Science Foundation Awards API.
+    port: 8080
+    description: REST adapter for National Science Foundation Awards API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
     resources:
-    - path: /awards.{format}
-      name: get-awards-format
+    - path: /v1/awards-format
+      name: awards-format
+      description: REST surface for awards.{format}.
       operations:
       - method: GET
-        name: get-awards-format
+        name: get
         description: Search awards
-        call: national-science-foundation.get-awards-format
+        call: national-science-foundation.get
         with:
           format: rest.format
+          keyword: rest.keyword
+          rpp: rest.rpp
+          offset: rest.offset
+          sortKey: rest.sortKey
+          sortDirection: rest.sortDirection
+          dateStart: rest.dateStart
+          dateEnd: rest.dateEnd
+          startDateStart: rest.startDateStart
+          startDateEnd: rest.startDateEnd
+          expDateStart: rest.expDateStart
+          expDateEnd: rest.expDateEnd
+          estimatedTotalAmtFrom: rest.estimatedTotalAmtFrom
+          estimatedTotalAmtTo: rest.estimatedTotalAmtTo
+          fundsObligatedAmtFrom: rest.fundsObligatedAmtFrom
+          fundsObligatedAmtTo: rest.fundsObligatedAmtTo
+          awardeeName: rest.awardeeName
+          awardeeCity: rest.awardeeCity
+          awardeeStateCode: rest.awardeeStateCode
+          awardeeZipCode: rest.awardeeZipCode
+          perfCity: rest.perfCity
+          perfStateCode: rest.perfStateCode
+          perfLocation: rest.perfLocation
+          pdPIName: rest.pdPIName
+          coPDPI: rest.coPDPI
+          poName: rest.poName
+          org_code_dir: rest.org_code_dir
+          org_code_div: rest.org_code_div
+          progEleCode: rest.progEleCode
+          ActiveAwards: rest.ActiveAwards
+          ExpiredAwards: rest.ExpiredAwards
+          histAwd: rest.histAwd
+          transType: rest.transType
+          callback: rest.callback
         outputParameters:
         - type: object
           mapping: $.
-    - path: /awards/{id}.{format}
-      name: get-awards-id-format
+    - path: /v1/awards/{id-format}
+      name: awards-id-format
+      description: REST surface for awards-id}.{format.
       operations:
       - method: GET
-        name: get-awards-id-format
+        name: get
         description: Retrieve a single award
-        call: national-science-foundation.get-awards-id-format
+        call: national-science-foundation.get
         with:
           id: rest.id
           format: rest.format
         outputParameters:
         - type: object
           mapping: $.
-    - path: /awards/{id}/projectoutcomes.{format}
-      name: get-awards-id-projectoutcomes-format
+    - path: /v1/awards/{id}/projectoutcomes-format
+      name: awards-id-projectoutcomes-format
+      description: REST surface for awards-id-projectoutcomes.{format}.
       operations:
       - method: GET
-        name: get-awards-id-projectoutcomes-format
+        name: get
         description: Retrieve project outcomes for an award
-        call: national-science-foundation.get-awards-id-projectoutcomes-format
+        call: national-science-foundation.get
         with:
           id: rest.id
           format: rest.format
@@ -224,18 +262,19 @@ capability:
         - type: object
           mapping: $.
   - type: mcp
-    port: 9090
     namespace: national-science-foundation-mcp
+    port: 9090
     transport: http
-    description: MCP adapter for National Science Foundation Awards API for AI agent use.
+    description: MCP adapter for National Science Foundation Awards API. One tool per consumed operation, routed inline through
+      this capability's consumes block.
     tools:
-    - name: get-awards-format
+    - name: search-awards
       description: Search awards
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: national-science-foundation.get-awards-format
+      call: national-science-foundation.get
       with:
         format: tools.format
         keyword: tools.keyword
@@ -271,154 +310,32 @@ capability:
         histAwd: tools.histAwd
         transType: tools.transType
         callback: tools.callback
-      inputParameters:
-      - name: format
-        type: string
-        description: format
-        required: true
-      - name: keyword
-        type: string
-        description: Free-text search supporting Boolean AND, OR, NOT.
-      - name: rpp
-        type: integer
-        description: Results per page.
-      - name: offset
-        type: integer
-        description: Starting record offset for pagination.
-      - name: sortKey
-        type: string
-        description: sortKey
-      - name: sortDirection
-        type: string
-        description: sortDirection
-      - name: dateStart
-        type: string
-        description: Award date start (mm/dd/yyyy).
-      - name: dateEnd
-        type: string
-        description: dateEnd
-      - name: startDateStart
-        type: string
-        description: startDateStart
-      - name: startDateEnd
-        type: string
-        description: startDateEnd
-      - name: expDateStart
-        type: string
-        description: expDateStart
-      - name: expDateEnd
-        type: string
-        description: expDateEnd
-      - name: estimatedTotalAmtFrom
-        type: number
-        description: estimatedTotalAmtFrom
-      - name: estimatedTotalAmtTo
-        type: number
-        description: estimatedTotalAmtTo
-      - name: fundsObligatedAmtFrom
-        type: number
-        description: fundsObligatedAmtFrom
-      - name: fundsObligatedAmtTo
-        type: number
-        description: fundsObligatedAmtTo
-      - name: awardeeName
-        type: string
-        description: awardeeName
-      - name: awardeeCity
-        type: string
-        description: awardeeCity
-      - name: awardeeStateCode
-        type: string
-        description: awardeeStateCode
-      - name: awardeeZipCode
-        type: string
-        description: awardeeZipCode
-      - name: perfCity
-        type: string
-        description: perfCity
-      - name: perfStateCode
-        type: string
-        description: perfStateCode
-      - name: perfLocation
-        type: string
-        description: perfLocation
-      - name: pdPIName
-        type: string
-        description: pdPIName
-      - name: coPDPI
-        type: string
-        description: coPDPI
-      - name: poName
-        type: string
-        description: poName
-      - name: org_code_dir
-        type: string
-        description: org_code_dir
-      - name: org_code_div
-        type: string
-        description: org_code_div
-      - name: progEleCode
-        type: string
-        description: progEleCode
-      - name: ActiveAwards
-        type: boolean
-        description: ActiveAwards
-      - name: ExpiredAwards
-        type: boolean
-        description: ExpiredAwards
-      - name: histAwd
-        type: boolean
-        description: histAwd
-      - name: transType
-        type: string
-        description: transType
-      - name: callback
-        type: string
-        description: JSONP callback name (when format is json).
       outputParameters:
       - type: object
         mapping: $.
-    - name: get-awards-id-format
+    - name: retrieve-single-award
       description: Retrieve a single award
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: national-science-foundation.get-awards-id-format
+      call: national-science-foundation.get
       with:
         id: tools.id
         format: tools.format
-      inputParameters:
-      - name: id
-        type: string
-        description: NSF award number.
-        required: true
-      - name: format
-        type: string
-        description: format
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: get-awards-id-projectoutcomes-format
+    - name: retrieve-project-outcomes-award
       description: Retrieve project outcomes for an award
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: national-science-foundation.get-awards-id-projectoutcomes-format
+      call: national-science-foundation.get
       with:
         id: tools.id
         format: tools.format
-      inputParameters:
-      - name: id
-        type: string
-        description: id
-        required: true
-      - name: format
-        type: string
-        description: format
-        required: true
       outputParameters:
       - type: object
         mapping: $.
