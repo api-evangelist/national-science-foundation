@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Science Foundation Awards API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search awards",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.nsf.gov/services/v1/awards.:format",
+        "params": [
+          {
+            "name": "format",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "keyword",
+            "value": "",
+            "type": "query",
+            "description": "Free-text search supporting Boolean AND, OR, NOT."
+          },
+          {
+            "name": "rpp",
+            "value": "",
+            "type": "query",
+            "description": "Results per page."
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query",
+            "description": "Starting record offset for pagination."
+          },
+          {
+            "name": "sortKey",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "sortDirection",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "dateStart",
+            "value": "",
+            "type": "query",
+            "description": "Award date start (mm/dd/yyyy)."
+          },
+          {
+            "name": "dateEnd",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "startDateStart",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "startDateEnd",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "expDateStart",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "expDateEnd",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "estimatedTotalAmtFrom",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "estimatedTotalAmtTo",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "fundsObligatedAmtFrom",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "fundsObligatedAmtTo",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "awardeeName",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "awardeeCity",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "awardeeStateCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "awardeeZipCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "perfCity",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "perfStateCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "perfLocation",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "pdPIName",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "coPDPI",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "poName",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "org_code_dir",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "org_code_div",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "progEleCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "ActiveAwards",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "ExpiredAwards",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "histAwd",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "transType",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "callback",
+            "value": "",
+            "type": "query",
+            "description": "JSONP callback name (when format is json)."
+          }
+        ]
+      },
+      "docs": "Search NSF awards using keyword, awardee, location, program, date, and amount filters."
+    },
+    {
+      "info": {
+        "name": "Retrieve a single award",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.nsf.gov/services/v1/awards/:id.:format",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path",
+            "description": "NSF award number."
+          },
+          {
+            "name": "format",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a single award"
+    },
+    {
+      "info": {
+        "name": "Retrieve project outcomes for an award",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.nsf.gov/services/v1/awards/:id/projectoutcomes.:format",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "format",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve project outcomes for an award"
+    }
+  ],
+  "bundled": true
+}

@@ -1,8 +1,9 @@
 aid: national-science-foundation
 name: National Science Foundation
-description: The National Science Foundation (NSF) is an independent federal agency that supports fundamental research and
-  education in all the non-medical fields of science and engineering. NSF provides grants and funding to researchers and institutions
-  to drive innovation, discovery, and progress.
+description: >-
+  The National Science Foundation (NSF) is an independent federal agency that supports fundamental research and
+  education in all the non-medical fields of science and engineering. NSF provides grants and funding to researchers and
+  institutions to drive innovation, discovery, and progress.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/national-science-foundation/refs/heads/main/apis.yml
@@ -17,21 +18,21 @@ apis:
   - aid: national-science-foundation:national-science-foundation
     name: National Science Foundation API
     tags:
-    - Research
-    - Science
+      - Research
+      - Science
     humanURL: https://www.nsf.gov/developer
     baseURL: https://api.nsf.gov/services/v1/
     properties:
-    - url: https://www.nsf.gov/developer
-      type: Documentation
-    - url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
-      type: Reference
-    - url: https://raw.githubusercontent.com/api-evangelist/national-science-foundation/refs/heads/main/openapi/national-science-foundation-openapi.yml
-      type: OpenAPI
-    - type: NaftikoCapability
-      url: capabilities/national-science-foundation.yaml
-    description: The NSF API provides an interface to Research Spending and Results functionality available through NSF's Research.gov
-      system, including award search data showing how federal research dollars are being spent.
+      - url: https://www.nsf.gov/developer
+        type: Documentation
+      - url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
+        type: Reference
+      - url: >-
+          https://raw.githubusercontent.com/api-evangelist/national-science-foundation/refs/heads/main/openapi/national-science-foundation-openapi.yml
+        type: OpenAPI
+    description: >-
+      The NSF API provides an interface to Research Spending and Results functionality available through NSF's
+      Research.gov system, including award search data showing how federal research dollars are being spent.
 common:
   - type: GitHubOrganization
     url: https://github.com/nsf-open
