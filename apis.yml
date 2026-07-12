@@ -34,6 +34,8 @@ apis:
       The NSF API provides an interface to Research Spending and Results functionality available through NSF's
       Research.gov system, including award search data showing how federal research dollars are being spent.
 common:
+  - type: DomainSecurity
+    url: security/national-science-foundation-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/nsf-open
   - type: LinkedIn
@@ -42,6 +44,8 @@ common:
     url: https://www.nsf.gov/
   - type: Portal
     url: https://www.nsf.gov/developer
+  - type: Blog
+    url: https://www.nsf.gov/rss/rss_www_news.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
