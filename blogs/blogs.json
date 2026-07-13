@@ -1,0 +1,21 @@
+{
+  "repo": "national-science-foundation",
+  "feeds": [
+    {
+      "source": "https://www.nsf.gov/rss/rss_www_news.xml",
+      "feed_url": "https://www.nsf.gov/rss/rss_www_news.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.nsf.gov/developer",
+      "feed_url": "https://www.nsf.gov/developer",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 17
+}
