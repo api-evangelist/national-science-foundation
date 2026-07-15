@@ -34,6 +34,8 @@ apis:
       The NSF API provides an interface to Research Spending and Results functionality available through NSF's
       Research.gov system, including award search data showing how federal research dollars are being spent.
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-science-foundation-agentic-access.yml
   - type: DomainSecurity
     url: security/national-science-foundation-domain-security.yml
   - type: GitHubOrganization
