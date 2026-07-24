@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: National Science Foundation Awards API
+  description: The NSF Research Spending and Results Web API provides programmatic access to the award search functionality available through Research.gov. The API exposes how federal research dollars are being spent, what research is being performed, and project outcomes that result from NSF-funded work.
+  version: 1.0.0
+  contact:
+    name: NSF Developer Resources
+    url: https://www.nsf.gov/developer
+servers:
+- url: https://api.nsf.gov/services/v1
+  description: Production
+tags:
+- name: Awards
+paths:
+  /awards/{id}.{format}:
+    get:
+      summary: Retrieve a single award
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: NSF award number.
+      - name: format
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+      responses:
+        '200':
+          description: Award detail record.
+      tags:
+      - Awards
+  /awards/{id}/projectoutcomes.{format}:
+    get:
+      summary: Retrieve project outcomes for an award
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: format
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - json
+          - xml
+      responses:
+        '200':
+          description: Project outcomes report for the award.
+      tags:
+      - Awards
