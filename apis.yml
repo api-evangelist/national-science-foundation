@@ -5,7 +5,19 @@ description: >-
   education in all the non-medical fields of science and engineering. NSF provides grants and funding to researchers and
   institutions to drive innovation, discovery, and progress.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/national-science-foundation.png
 url: https://raw.githubusercontent.com/api-evangelist/national-science-foundation/refs/heads/main/apis.yml
 created: '2024-12-03'
 modified: '2026-05-19'
@@ -15,24 +27,35 @@ tags:
   - Research
   - Science
 apis:
-  - aid: national-science-foundation:national-science-foundation
-    name: National Science Foundation API
-    tags:
-      - Research
-      - Science
-    humanURL: https://www.nsf.gov/developer
-    baseURL: https://api.nsf.gov/services/v1/
-    properties:
-      - url: https://www.nsf.gov/developer
-        type: Documentation
-      - url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
-        type: Reference
-      - url: >-
-          https://raw.githubusercontent.com/api-evangelist/national-science-foundation/refs/heads/main/openapi/national-science-foundation-openapi.yml
-        type: OpenAPI
-    description: >-
-      The NSF API provides an interface to Research Spending and Results functionality available through NSF's
-      Research.gov system, including award search data showing how federal research dollars are being spent.
+- aid: national-science-foundation:national-science-foundation-awards-api
+  name: National Science Foundation Awards API
+  description: The Awards API from National Science Foundation — 2 operation(s) for awards.
+  humanURL: https://www.nsf.gov/developer
+  baseURL: https://api.nsf.gov/services/v1/
+  tags:
+  - Awards
+  properties:
+  - type: OpenAPI
+    url: openapi/national-science-foundation-awards-api-openapi.yml
+  - type: Documentation
+    url: https://www.nsf.gov/developer
+  - type: Reference
+    url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
+- aid: national-science-foundation:national-science-foundation-awards-format-api
+  name: National Science Foundation Awards.{format} API
+  description: >-
+    The Awards.{format} API from National Science Foundation — 1 operation(s) for awards.{format}.
+  humanURL: https://www.nsf.gov/developer
+  baseURL: https://api.nsf.gov/services/v1/
+  tags:
+  - Awards.{format}
+  properties:
+  - type: OpenAPI
+    url: openapi/national-science-foundation-awards-format-api-openapi.yml
+  - type: Documentation
+    url: https://www.nsf.gov/developer
+  - type: Reference
+    url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
 common:
   - type: AgenticAccess
     url: agentic-access/national-science-foundation-agentic-access.yml
