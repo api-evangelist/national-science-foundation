@@ -1,0 +1,16 @@
+{
+  "provider": "national-science-foundation",
+  "sources": [
+    "national-science-foundation-awards-api-openapi.yml",
+    "national-science-foundation-awards-format-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-science-foundation-awards-api-openapi.yml",
+    "national-science-foundation-awards-format-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
