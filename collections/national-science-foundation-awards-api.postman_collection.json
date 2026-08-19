@@ -1,0 +1,184 @@
+{
+  "item": [
+    {
+      "id": "03ae9072-ff50-4e73-ac35-7289c64c27af",
+      "name": "Awards",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dd615495-f2d1-405a-8c29-a83663e1e9e5",
+          "name": "Retrieve a single award",
+          "request": {
+            "name": "Retrieve a single award",
+            "description": {},
+            "url": {
+              "path": [
+                "awards",
+                "{{id}}.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e816d51a-87e8-40ac-99dd-ac51e618ef5d",
+              "name": "Award detail record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "awards",
+                    "{{id}}.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5ae0900-5823-4d55-8251-917a3b5101c5",
+          "name": "Retrieve project outcomes for an award",
+          "request": {
+            "name": "Retrieve project outcomes for an award",
+            "description": {},
+            "url": {
+              "path": [
+                "awards",
+                ":id",
+                "projectoutcomes.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebaff302-01a5-4952-a058-af05f41cbaf8",
+              "name": "Project outcomes report for the award.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "awards",
+                    ":id",
+                    "projectoutcomes.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nsf.gov/services/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) NSF award number.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "format"
+    }
+  ],
+  "info": {
+    "_postman_id": "6e2be367-1dca-4e60-8add-039651b731d0",
+    "name": "National Science Foundation Awards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NSF Research Spending and Results Web API provides programmatic access to the award search functionality available through Research.gov. The API exposes how federal research dollars are being spent, what research is being performed, and project outcomes that result from NSF-funded work.\n\nContact Support:\n Name: NSF Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

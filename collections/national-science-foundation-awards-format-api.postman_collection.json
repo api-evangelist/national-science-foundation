@@ -1,0 +1,404 @@
+{
+  "item": [
+    {
+      "id": "c384e8cb-6b51-4d3b-a359-a99af1662f37",
+      "name": "Awards.{format}",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "869d50e8-f095-46ab-99d2-892fbb1d3bf9",
+          "name": "Search awards",
+          "request": {
+            "name": "Search awards",
+            "description": {
+              "content": "Search NSF awards using keyword, awardee, location, program, date, and amount filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "awards.{{format}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Free-text search supporting Boolean AND, OR, NOT."
+                },
+                {
+                  "disabled": false,
+                  "key": "rpp",
+                  "value": "25",
+                  "description": "Results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "1",
+                  "description": "Starting record offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortKey",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortDirection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateStart",
+                  "value": "<string>",
+                  "description": "Award date start (mm/dd/yyyy)."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateEnd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDateStart",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDateEnd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expDateStart",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expDateEnd",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "estimatedTotalAmtFrom",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "estimatedTotalAmtTo",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fundsObligatedAmtFrom",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fundsObligatedAmtTo",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "awardeeName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "awardeeCity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "awardeeStateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "awardeeZipCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "perfCity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "perfStateCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "perfLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pdPIName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "coPDPI",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "poName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "org_code_dir",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "org_code_div",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "progEleCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ActiveAwards",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ExpiredAwards",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "histAwd",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "transType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "JSONP callback name (when format is json)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "025a622c-1452-4ce7-85dd-e5a3fc121c0f",
+              "name": "Paginated list of award records with metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "awards.{{format}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rpp",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sortKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDateStart",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDateEnd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expDateStart",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expDateEnd",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "estimatedTotalAmtFrom",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "estimatedTotalAmtTo",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "fundsObligatedAmtFrom",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "fundsObligatedAmtTo",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "awardeeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "awardeeCity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "awardeeStateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "awardeeZipCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "perfCity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "perfStateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "perfLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pdPIName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "coPDPI",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "poName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "org_code_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "org_code_div",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "progEleCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ActiveAwards",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ExpiredAwards",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "histAwd",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "transType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nsf.gov/services/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "format"
+    }
+  ],
+  "info": {
+    "_postman_id": "90719d74-6d35-45e6-a3bb-ae51318cc4b3",
+    "name": "National Science Foundation Awards Awards.{format} API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NSF Research Spending and Results Web API provides programmatic access to the award search functionality available through Research.gov. The API exposes how federal research dollars are being spent, what research is being performed, and project outcomes that result from NSF-funded work.\n\nContact Support:\n Name: NSF Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

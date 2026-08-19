@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "National Science Foundation Awards API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Awards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a single award",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nsf.gov/services/v1/awards/:id.:format",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "NSF award number."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single award"
+        },
+        {
+          "info": {
+            "name": "Retrieve project outcomes for an award",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nsf.gov/services/v1/awards/:id/projectoutcomes.:format",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve project outcomes for an award"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
