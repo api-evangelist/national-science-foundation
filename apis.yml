@@ -23,6 +23,10 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
+  - Federal-Government
+  - Research
+  - Science
+tags_raw:
   - Federal Government
   - Research
   - Science
@@ -47,7 +51,8 @@ apis:
     The Awards.{format} API from National Science Foundation — 1 operation(s) for awards.{format}.
   humanURL: https://www.nsf.gov/developer
   baseURL: https://api.nsf.gov/services/v1/
-  tags:
+  tags: []
+  tags_raw:
   - Awards.{format}
   properties:
   - type: OpenAPI
