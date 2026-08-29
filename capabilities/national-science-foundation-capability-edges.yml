@@ -1,0 +1,26 @@
+slug: national-science-foundation
+provider: National Science Foundation
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Awards
+  spec_file: national-science-foundation-awards-api-openapi.yml
+  capability_id: BC-4780.20
+  capability_id_l1: BC-4780
+  capability_name: Research Grant Management
+  confidence: 0.7
+  evidence: GET /awards/{id}/projectoutcomes.{format}  'Retrieve project outcomes for an award'; 'how
+    federal research dollars are being spent, what research is being performed, and project outcomes'
+  reason: The operations return research grant awards and their project outcomes, which sits within research
+    grant lifecycle management (post-award reporting). Moderate confidence because the API is a public
+    transparency read model rather than an award administration system.

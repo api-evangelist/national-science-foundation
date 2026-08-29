@@ -73,6 +73,9 @@ apis:
   - type: Reference
     url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
 common:
+  - type: CapabilityMap
+    url: capabilities/national-science-foundation-capability-edges.yml
+    name: National Science Foundation Business Capability Map
   - type: AgenticAccess
     url: agentic-access/national-science-foundation-agentic-access.yml
   - type: DomainSecurity
