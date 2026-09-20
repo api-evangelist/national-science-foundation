@@ -11,8 +11,20 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 1
+edge_count: 2
 edges:
+- tag: Awards.{format}
+  spec_file: national-science-foundation-awards-format-api-openapi.yml
+  capability_id: BC-3260
+  capability_id_l1: BC-3260
+  capability_name: Government Grants & Funding Management
+  confidence: 0.72
+  evidence: GET /awards.{format} 'Search awards'; 'programmatic access to the award search functionality
+    available through Research.gov'
+  reason: Search over federal research grant awards is part of Government Grants & Funding Management
+    (award records and their disclosure); the single generic search operation does not pin down a specific
+    sub-capability.
+  recovered_from: vertical-public-sector-government-edges.json
 - tag: Awards
   spec_file: national-science-foundation-awards-api-openapi.yml
   capability_id: BC-4780.20
