@@ -1,8 +1,7 @@
 {
   "provider": "national-science-foundation",
   "sources": [
-    "national-science-foundation-awards-api-openapi.yml",
-    "national-science-foundation-awards-format-api-openapi.yml"
+    "_original/national-science-foundation-openapi.yml"
   ],
   "outputs": [
     "national-science-foundation-awards-api-openapi.yml",
@@ -11,6 +10,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "national-science-foundation-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "national-science-foundation-openapi.yml: tagged paths GET /awards.{format} -> Awards.{format}",
+    "national-science-foundation-openapi.yml: tagged paths GET /awards/{id}.{format} -> Awards",
+    "national-science-foundation-openapi.yml: tagged paths GET /awards/{id}/projectoutcomes.{format} -> Awards",
+    "national-science-foundation-openapi.yml: declared missing tag: Awards",
+    "national-science-foundation-openapi.yml: declared missing tag: Awards.{format}",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "national-science-foundation-awards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "national-science-foundation-awards-format-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
