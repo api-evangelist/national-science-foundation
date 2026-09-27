@@ -34,13 +34,14 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
-  - Federal-Government
+  - Federal Government
   - Research
   - Science
 tags_raw:
   - Federal Government
   - Research
   - Science
+  - Federal-Government
 apis:
 - aid: national-science-foundation:national-science-foundation-awards-api
   name: National Science Foundation Awards API
