@@ -74,6 +74,12 @@ apis:
   - type: Reference
     url: https://resources.research.gov/common/webapi/awardapisearch-v1.htm
 common:
+  - type: Plans
+    url: plans/national-science-foundation-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/national-science-foundation-rate-limits.yml
+  - type: FinOps
+    url: finops/national-science-foundation-finops.yml
   - type: CapabilityMap
     url: capabilities/national-science-foundation-capability-edges.yml
     name: National Science Foundation Business Capability Map
